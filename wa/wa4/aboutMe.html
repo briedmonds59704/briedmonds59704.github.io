@@ -4,8 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
+    <style>
+        body {
+            font-family: 'Alice', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-image: url('aboutMe-header.jpg');
+            background-size: cover;
+            color: black;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 36px;
+        }
+        main {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+        article {
+            flex: 2;
+            margin-right: 20px;
+        }
+        aside {
+            flex: 1;
+            background-color: #e2e2e2;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        h1, h2 {
+            font-family: 'Alice', serif;
+        }
+        p{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        footer {
+            background-image: url('aboutMe-footer.jpg');
+            background-size: cover;
+            color: black;
+            text-align: center;
+            font-size: 26px;
+            font-family: 'Alice', serif;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-    
+    <header>
+        <h1>About Me</h1>
+        <a id="home-link" href="wa4-Portfolio.html" style="color: rgb(0, 0, 0); text-decoration: none;">Home</a>
+    </header>
+    <main>
+        <article>
+            <h2> Get to know me!</h2>
+            <p>My name is Bri Edmonds. I'm a student at the University of Colorado Boulder. I'm majoring in a division of computer engineering, which is 
+                called the Creative Technology and Design (CTD) program. This is my first year in the program, and I'm truly looking forward to learning so much!
+                I'm also a new student ambassador for the CTD program. 
+            </p>
+            <p>Some of my favorite things to do in my free time are reading, baking, hiking, crafting, puzzling, and working out. 
+                I love being outside and exploring new places, especially if it involves a good hike! 
+                I'm also a big fan of trying out new recipes in the kitchen and experimenting with different ingredients.
+            </p>
+        </article>
+        <aside>
+            <h2>My Hobbies</h2>
+            <ul>
+                <li>Reading</li>
+                <li>Baking</li>
+                <li>Hiking</li>
+                <li>Crafting</li>
+                <li>Puzzling</li>
+                <li>Working out</li>
+            </ul>
+        </aside>
+    </main>
+    <footer>    
+        <h3>© 2026 Bri Edmonds</h3>
+    </footer>
 </body>
 </html>

@@ -7,31 +7,63 @@
     <style>
         body {
             font-family: 'Alice', serif;
-            margin: 20px;
             background-color: #f4f4f4;
         }
-        h1 {
+        header {
+            background-image: url('contacts-header.jpg');
+            background-size: cover;
             text-align: center;
             font-size: 36px;
         }
-        p, ul {
+        main {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        footer {
+            background-image: url('contacts-footer.jpg');
+            background-size: cover;
+            font-family: 'Alice', serif;
+            font-size: 36px;
+            padding: 10px;
+            text-align: center;
+            margin-top: 20px;
+            color:black;
+        }
+        h1 {
+            font-size: 46px;
+            margin-bottom: 20px;
+        }
+        dl {
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: 20px;
+            font-size: 25px;
             font-weight: 500;
         }
-        ul {
+        dl {
             list-style-type: none;
-            padding: 0;
+            padding: 20;
         }
-        li {
+        dt, dd {
             margin-bottom: 10px;
         }
         a {
-            color: #2e7e81;
+            color: #440f37;
             text-decoration: none;
+            font-weight: bold;
         }
         a:hover {
             text-decoration: underline;
+        }
+        article {
+            width: 60%;
+            flex: left;
+            text-align: left;
+            margin-right: 20px;
+            font-size: 20px;
+        }
+        aside {
+            margin-top: 20px;
+            text-align: right;
         }
     </style>
 </head>
@@ -41,14 +73,29 @@
         <a id="home-link" href="wa4-Portfolio.html">Home</a>
     </header>
     <main>
-        <p>If you would like to get in touch with me, please use the following contact information:</p>
-        <ul>
-            <li>Email: <a href="mailto:brianna.edmonds.btec@gmail.com">brianna.edmonds.btec@gmail.com</a> </li>
-            <li>Alternate Email: <a href="mailto:bri.edmonds@colorado.edu">bri.edmonds@colorado.edu</a></li>
-            <li>Personal Email: <a href="mailto:briedmonds59704@gmail.com">briedmonds59704@gmail.com</a></li>
-            <li>Phone: <a href="tel:303-709-6590">303-709-6590</a></li>
-            <li>LinkedIn: <a href="https://www.linkedin.com/in/bri-edmonds-25792834a/" target="_blank">Bri Edmonds</a></li>
-        </ul>
+        <article>
+            <dl>If you would like to get in touch with me, please use the following <strong>contact information:</strong></dl><br>
+                <dt>Email:</dt>
+                <dd><a href="mailto:brianna.edmonds.btec@gmail.com">brianna.edmonds.btec@gmail.com</a></dd>
+                <dt>Alternate Email:</dt>
+                <dd><a href="mailto:bri.edmonds@colorado.edu">bri.edmonds@colorado.edu</a></dd>
+                <dt>Personal Email:</dt>
+                <dd><a href="mailto:briedmonds59704@gmail.com">briedmonds59704@gmail.com</a></dd>
+                <dt>Phone:</dt>
+                <dd><a href="tel:303-709-6590">303-709-6590</a></dd>
+                <dt>LinkedIn:</dt>
+                <dd><a href="https://www.linkedin.com/in/bri-edmonds-25792834a/" target="_blank">Bri Edmonds</a></dd>
+            </dl>
+        </article>
+        <aside>
+            <img src="b.e.logo.jpg" alt="Bri Edmonds Logo" style="width:400px;height:auto;">
+            <p font-size="30px">I look forward to hearing from you!</p>
+        </aside>
     </main>
+    <footer>
+        <p>
+            &copy; 2026 Bri Edmonds.<br>
+            All rights reserved.
+        </p>
 </body>
 </html>

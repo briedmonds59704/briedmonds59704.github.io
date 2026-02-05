@@ -52,6 +52,7 @@ p, li, table {
 /* || header layout */
 
 div[class="nav"], article, footer, .secondary {
+  /* changed background color to white from green to make a passable color contrast*/
   background-color: #fff;
 }
 

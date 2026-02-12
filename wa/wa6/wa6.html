@@ -1,18 +1,22 @@
-updated<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Design System Template</title>
-    <style>
+    <title>Design System Website</title>
+    <link rel="stylesheet" href="wa6.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Quintessential&display=swap" rel="stylesheet">
+<style>
         /* CSS Reset and Base Styles */
         :root {
             /* Color Palette - 5 Core Colors */
-            --color-primary: #3498db;     /* Vibrant Blue - Main Brand Color */
-            --color-secondary: #2ecc71;   /* Emerald Green - Complementary Action Color */
-            --color-accent: #e74c3c;      /* Passionate Red - Highlight / Warning Color */
-            --color-neutral: #34495e;     /* Deep Slate Gray - Neutral Text and Background */
-            --color-highlight: #f1c40f;   /* Bright Yellow - Accent / Attention Color */
+            --color-primary: #132A13;     /* Evergreen - Main Brand Color */
+            --color-secondary: #644536;   /* Coffee Bean - Complementary Action Color */
+            --color-accent: #330036;      /* Dark Amethyst - Highlight / Warning Color */
+            --color-neutral: #5158bb;     /* Slate Indigo - Neutral Text and Background */
+            --color-highlight: #80d39b;   /* Celadon - Accent / Attention Color */
             
             /* Derived Colors for Flexibility */
             --color-background: color-mix(in srgb, var(--color-neutral) 10%, white);
@@ -20,15 +24,15 @@ updated<!DOCTYPE html>
             --color-text-light: white;
 
             /* Typography */
-            --font-primary: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-            --font-secondary: 'Roboto Mono', monospace;
+            --font-primary: 'Quintessential', serif;
+            --font-secondary: 'Faculty Glyphic', sans-serif;
 
             /* Spacing System */
-            --spacing-xs: 0.25rem;
-            --spacing-sm: 0.5rem;
-            --spacing-md: 1rem;
-            --spacing-lg: 1.5rem;
-            --spacing-xl: 2rem;
+            --spacing-xs: 0.55rem;
+            --spacing-sm: 0.85rem;
+            --spacing-md: 1.2rem;
+            --spacing-lg: 1.9rem;
+            --spacing-xl: 2.4rem;
 
             /* Border Radius */
             --radius-sm: 4px;
@@ -43,7 +47,6 @@ updated<!DOCTYPE html>
         }
 
         body {
-            font-family: var(--font-primary);
             line-height: 1.6;
             background-color: var(--color-background);
             color: var(--color-text-dark);
@@ -57,33 +60,53 @@ updated<!DOCTYPE html>
 
         /* Typography Styles */
         h1 {
-            font-size: 3rem;
-            font-weight: 700;
+            font-size: 45px;
+            font-weight: 650;
             margin-bottom: var(--spacing-md);
             color: var(--color-primary);
+            font-family: var(--font-primary);
         }
 
         h2 {
-            font-size: 2rem;
+            font-size: 37px;
             font-weight: 600;
             margin-bottom: var(--spacing-md);
             color: var(--color-secondary);
+            font-family: var(--font-primary);
         }
 
         h3 {
-            font-size: 1.5rem;
-            font-weight: 500;
+            font-size: 30px;
+            font-weight: 550;
             margin-bottom: var(--spacing-sm);
             color: var(--color-accent);
+            font-family: var(--font-primary);
         }
 
+    .quintessential-regular {
+        font-family: "Quintessential", serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+    .faculty-glyphic-regular {
+        font-family: "Faculty Glyphic", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+
+
         .body-text {
-            font-size: 1rem;
+            font-size: 20px;
+            font-weight: 400;
+            font-family: var(--font-secondary);
             margin-bottom: var(--spacing-md);
         }
 
         .small-text {
-            font-size: 0.75rem;
+            font-size: 15px;
+            font-weight: 400;
+            font-family: var(--font-secondary);
             color: color-mix(in srgb, var(--color-text-dark) 70%, transparent);
         }
 
@@ -196,7 +219,7 @@ updated<!DOCTYPE html>
 
         <section>
             <h2>Typography</h2>
-            <h1>Heading 1 - Space Grotesk</h1>
+            <h1>Heading 1 - Quintessential</h1>
             <h2>Heading 2 - Space Grotesk</h2>
             <h3>Heading 3 - Space Grotesk</h3>
             <p class="body-text">Body Text - Using Space Grotesk with a comfortable line height and readable size.</p>

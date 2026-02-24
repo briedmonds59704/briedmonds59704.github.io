@@ -16,6 +16,9 @@ article {
     height: 297mm;
     margin: 20px auto;
     position: relative;
+    background-color: white;
+    border-top: 1mm solid red;
+    border-bottom: 1mm solid red;
 }
 
 address {
@@ -39,3 +42,14 @@ h1 {
 }
 
 /* Your CSS below here */
+
+h1 {
+    background: no-repeat url('ica8-images/ica8-logo.png');
+    filter: drop-shadow(3px 3px 3px black);
+}
+
+article {
+    background: no-repeat top/100% url('ica8-images/ica8-header.png'),
+    no-repeat bottom/100% url('ica8-images/ica8-footer.png'),
+    linear-gradient(100deg, lightgray, white 15%, white 85%, lightgray);
+}

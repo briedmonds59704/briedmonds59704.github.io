@@ -23,6 +23,7 @@ p {
     width: 100vw;
     height: 10vh;
     background-color: brown;
+    color: red;
 }
 
 .nav-item {
@@ -31,7 +32,7 @@ p {
     background-color: beige;
     border: black solid 5px;
     text-decoration: none;
-    color: black;
+
 }
 
 .nav-item:hover {

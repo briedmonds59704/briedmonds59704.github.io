@@ -50,6 +50,6 @@ h1 {
 
 article {
     background: no-repeat top/100% url('ica8-images/ica8-header.png'),
-    no-repeat bottom/100% url('ica8-images/ica8-footer.png'),
-    linear-gradient(100deg, lightgray, white 15%, white 85%, lightgray);
+    linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0) 25%),
+    no-repeat bottom/100% url('ica8-images/ica8-footer.png');
 }

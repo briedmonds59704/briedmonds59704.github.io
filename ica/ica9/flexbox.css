@@ -25,12 +25,11 @@ nav ul.menu {
     gap: 6rem;
 }
 
-
-/*Flexbox 2
+/*Flexbox 2*/
 body {
     font: 1.2em / 1.5 sans-serif;
 }
-ul.flexbox2 {
+ul {
 max-width: 750px;
     list-style: none;
     padding: 0;
@@ -45,11 +44,48 @@ li {
     padding: 0.5em;
 }
 
-ul {
-  /* Add styles here */
 
-*/ 
-/*
-li {
+ul.flexbox2 {
   /* Add styles here */
-/*
+    display: flex;
+} 
+
+li.flex-item {
+  /* Add styles here */
+    flex: 1;
+}
+
+li.flex-item:first-child {
+    flex: 2;
+}
+
+/*Flexbox 3*/
+body {
+    font: 1.2em / 1.5 sans-serif;
+}
+ul.flexbox3 {
+    width: 450px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li.flex-item3 {
+    background-color: #4d7298;
+    border: 2px solid #77a6b6;
+    border-radius: 0.5em;
+    color: white;
+    padding: 0.5em;
+    margin: 0.5em;
+}
+
+ul.flexbox3 {
+  /* Add styles here */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+li.flex-item3 {
+  /* Add styles here */
+    flex: auto;
+}

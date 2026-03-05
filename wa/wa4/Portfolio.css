@@ -1,11 +1,11 @@
 body {
-                font-family: 'Alice', serif;
-                font-size: 20px;
-                font-weight: 250;
-                text-align: center;
-                margin: 0;
-                padding: 0;
-            }
+    font-family: 'Alice', serif;
+    font-size: 20px;
+    font-weight: 250;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
 
             header {
                 background-image: url('header.jpg');
@@ -31,26 +31,37 @@ body {
                 font-size: 20px;
                 font-weight: 500;
             }
-            footer {
-                background-image: url('portfolio-footer.jpg');
-                width: 1565px; 
-                height: 220px;
-                background-size: cover;
-                color: #000000;
-                padding: 10px;
-                text-align: center;
-                font-size: 20px;
-                font-weight: 600;
-                position: relative;
-                bottom: -50px;
-                left: 0;
-                right: 0;
-            }
-            a {
-                text-decoration: none;
-                font-weight: bold;
-                font-size: 20px;
-            }
-            a:hover {
-                text-decoration: underline;
-            }
+footer {
+    background-image: url('portfolio-footer.jpg');
+    width: 110w; 
+    height: 22vh;
+    background-size: cover;
+    color: #000000;
+    padding: 10px;
+    text-align: center;
+    font-size: 1em;
+    font-weight: 600;
+    position: relative;
+    bottom: -50px;
+    left: 0;
+    right: 0;
+}
+a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+}
+a:hover {
+    text-decoration-style: bold;
+    color: orangered;
+}
+
+button {
+    background-color: lightgoldenrodyellow;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 10px;
+    border-style: curved;
+}

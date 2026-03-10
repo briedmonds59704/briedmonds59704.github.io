@@ -25,24 +25,27 @@ header {
             }
             nav ul li {
                 float: left;
+}
 
-            }
-            nav ul li a {
-                display: block;
-                color: white;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-            }
-            nav ul li a:hover {
-                text-decoration-style: underline;
-                color: orangered;
-            }
-            main {
-                padding: 20px;
-                font-size: 25px;
-                font-weight: 500;
-            }
+nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration-style: underline;
+    color: orangered;
+}
+
+main {
+    padding: 20px;
+    font-size: 25px;
+    font-weight: 500;
+}
+
 footer {
     background-image: url('portfolio-footer.jpg');
     width: 110w; 
@@ -58,10 +61,12 @@ footer {
     left: 0;
     right: 0;
 }
+
 a {
     text-decoration: none;
     font-weight: bold;
     font-size: 1em;
+    color: #034418;
 }
 a:hover {
     text-decoration-style: bold;

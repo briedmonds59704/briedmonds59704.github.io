@@ -9,7 +9,7 @@ body {
 .header-content {
     background-image: url('header.jpg');
     background-size: cover;
-    color: ;
+    color: #D3612C;
     text-align: center;
     font-size: 20px;
     min-height: 150px;
@@ -53,7 +53,7 @@ main {
 }
 
 footer {
-    background-image: url('portfolio-footer.jpg');
+    background-image: url('portfolio-footer4.jpg');
     width: 110w; 
     height: 22vh;
     background-size: cover;
@@ -66,6 +66,10 @@ footer {
     bottom: -50px;
     left: 0;
     right: 0;
+}
+
+footer a {
+    color:#87172E;
 }
 
 a {
@@ -119,21 +123,22 @@ a:hover {
 
         /*Contact*/
 .contact {
-            font-family: 'Alice', serif;
-            background-color: #f4f4f4;
+    body { 
+        font-family: 'Alice', serif;
+        background-color: #f4f4f4;
         }
-header.contact {
+    header {
             background-image: url('contacts-header.jpg');
             background-size: cover;
             text-align: center;
             font-size: 36px;
         }
-        main.contact {
+        main {
             padding: 20px;
             display: flex;
             justify-content: space-between;
         }
-        footer.contact {
+        footer {
             background-image: url('contacts-footer.jpg');
             background-size: cover;
             font-family: 'Alice', serif;
@@ -144,43 +149,43 @@ header.contact {
             margin-top: 20px;
             color:black;
         }
-        h1.contact {
-            font-size: 46px;
-            margin-bottom: 20px;
-        }
-        dl.contact {
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: 25px;
-            font-weight: 500;
-        }
-        dl.contact {
-            list-style-type: none;
-            padding: 20px;
-        }
-        dt.contact, dd.contact {
-            margin-bottom: 10px;
-        }
-        a.contact {
-            color: #440f37;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a.contact:hover {
-            text-decoration: underline;
-        }
-        article {
-            width: 60%;
-            text-align: left;
-            margin-right: 20px;
-            font-size: 20px;
-        }
-        aside {
-            margin-top: 20px;
-            text-align: right;
-            font-size: 20px;
-            font-weight: 500;
-        }
-
+    h1 {
+        font-size: 46px;
+        margin-bottom: 20px;
+    }
+    dl {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 25px;
+        font-weight: 500;
+    }
+    dl {
+        list-style-type: none;
+        padding: 20px;
+    }
+    dt, dd {
+        margin-bottom: 10px;
+    }
+    a {
+        color: #440f37;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    article {
+        width: 60%;
+        text-align: left;
+        margin-right: 20px;
+        font-size: 20px;
+    }
+    aside {
+        margin-top: 20px;
+        text-align: right;
+        font-size: 20px;
+        font-weight: 500;
+    }
+}
 
 
         /*Projects in Progress*/

@@ -123,11 +123,7 @@ a:hover {
 
         /*Contact*/
 .contact {
-    body { 
-        font-family: 'Alice', serif;
-        background-color: #f4f4f4;
-        }
-    header {
+    .header-contact {
         background-image: url('contacts-header.jpg');
         background-size: cover;
         text-align: center;
@@ -190,12 +186,6 @@ a:hover {
 
         /*Projects in Progress*/
 .projects {
-        body {
-            font-family: 'Alice', serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
         header {
             background-image: url('projects-header.jpg');
             background-size: cover;
@@ -239,12 +229,6 @@ a:hover {
 }
         /*About Me*/
 .aboutme {
-    body {
-            font-family: 'Alice', serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
         header {
             background-image: url('aboutMe-header.jpg');
             background-size: cover;

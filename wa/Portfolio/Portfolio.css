@@ -161,7 +161,7 @@ a:hover {
     dt, dd {
         margin-bottom: 10px;
     }
-    a {
+    main a {
         color: #440f37;
         text-decoration: none;
         font-weight: bold;

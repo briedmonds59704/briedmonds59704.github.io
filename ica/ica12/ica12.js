@@ -1,10 +1,9 @@
 let newBtn = document.querySelector('#js-new-quote');
-
 newBtn.addEventListener('click', getQuote);
 
-async const endPoint = 'https://trivia.cyberwisp.com/getrandomchristmasquestion';
+const endPoint = 'https://trivia.cyberwisp.com/getrandomchristmasquestion';
 
-function getQuote() {
+async function getQuote() {
    //alert("Success");
     try {
         const response = await fetch(endPoint);
@@ -13,5 +12,8 @@ function getQuote() {
         }
         const json = await response.json();
         console.log(json);
+    } catch (err) {
+        console.log(err);
+        alert('Failed to fetch new quote');
     }
 }

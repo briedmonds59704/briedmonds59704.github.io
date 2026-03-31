@@ -16,10 +16,12 @@ async function getQuote() {
     } catch (err) {
         console.log(err);
         alert('Failed to fetch new quote');
-    }
+    } 
 };
 
 function displayQuote(quote) {
     const quoteText = document.querySelector('#js-quote-text');
     quoteText.textContent =quote;
 }
+
+getQuote();

@@ -1,0 +1,1 @@
+let newBtn = document.querySelector('#js-new-quote');

@@ -7,10 +7,104 @@
     <link rel="stylesheet" href="colorVolume.css">
 </head>
 <body>
-    
+    <header>
+        <h1>Color Volume Control</h1>
+        <p>
+        Vibrancy = volume. Match colors, adjust intensity, and play the hex‑guess challenge.
+        </p>
+    </header>
 
+    <main>
+        <!-- VOLUME PANEL -->
+        <section class="panel">
+        <h2>Color‑Based Volume</h2>
 
+        <div class="volume-display">
+            <span>Volume:</span>
+            <span id="volume-value">50</span>
+        </div>
 
+        <div class="slider-wrapper">
+            <label for="volume-slider">
+            Volume Slider (vibrancy‑linked)
+            </label>
+            <input
+            type="range"
+            id="volume-slider"
+            min="0"
+            max="100"
+            value="50"
+            >
+            <div id="slider-color-preview" class="color-preview"></div>
+        </div>
+
+        <div class="scheme-wrapper">
+            <label for="color-scheme">Color Scheme (hue):</label>
+            <select id="color-scheme">
+            <option value="0">Red</option>
+            <option value="40">Orange</option>
+            <option value="120">Green</option>
+            <option value="200">Cyan</option>
+            <option value="260">Purple</option>
+            <option value="300">Magenta</option>
+            </select>
+        </div>
+        </section>
+
+        <!-- TILE PANEL -->
+        <section class="panel">
+        <h2>Tile Volume Map</h2>
+        <p>
+            Each tile represents a volume level. Brighter tiles = louder.  
+            Click a tile to jump to that volume.
+        </p>
+        <div id="tile-grid" class="tile-grid"></div>
+        </section>
+
+        <!-- HEX GAME PANEL -->
+        <section class="panel">
+        <h2>Hex Guess Challenge</h2>
+        <p>
+            Guess the hex code of the color.  
+            Close guesses adjust your volume. Exact guesses give a ±5 bonus.
+        </p>
+
+        <div class="hex-game">
+            <div class="hex-color-swatch-wrapper">
+            <div id="hex-color-swatch" class="hex-color-swatch"></div>
+            <div class="hex-target-label">
+                Target color  - guess its hex!
+            </div>
+            </div>
+
+            <form id="hex-form">
+            <label for="hex-input">
+                Your guess (e.g. <code>#ff3366</code>):
+            </label>
+            <input type="text" id="hex-input" placeholder="#rrggbb">
+            <button type="submit">Submit Guess</button>
+            </form>
+
+            <div class="hex-feedback" id="hex-feedback"></div>
+        </div>
+        <!--<hr />
+
+<h3>Reverse Hex Challenge</h3>
+<p>Given a hex code, pick the correct color swatch.</p>
+
+<div id="reverse-hex-wrapper">
+  <div class="reverse-hex-target">
+    Hex Code:
+    <span id="reverse-hex-code">#000000</span>
+  </div>
+
+  <div id="reverse-hex-options" class="reverse-hex-options"></div>
+
+  <div id="reverse-hex-feedback" class="hex-feedback"></div>
+</div>
+-->
+        </section>
+    </main>
     <script src="colorVolume.js"></script>
 </body>
 </html>

@@ -5,11 +5,10 @@
 let currentVolume = 50;
 let currentHue = 0;
 
-const volumeSlider = document.getElementById("volume-slider");
+const volumeVisualBar = document.getElementById("volume-visual-bar");
 const volumeValue = document.getElementById("volume-value");
-const sliderColorPreview = document.getElementById("slider-color-preview");
 const colorSchemeSelect = document.getElementById("color-scheme");
-const tileGrid = document.getElementById("tile-grid");
+
 
 // ----------------------
 // COLOR MAPPING
@@ -23,66 +22,17 @@ function volumeToHSL(volume, hue) {
 
 function setVolume(vol) {
   currentVolume = Math.max(0, Math.min(100, vol));
-  volumeSlider.value = currentVolume;
   volumeValue.textContent = currentVolume;
 
-  updateSliderColor();
-  updateTilesActiveState();
+  updateVolumeVisual();
 }
 
-function updateSliderColor() {
+function updateVolumeVisual() {
   const color = volumeToHSL(currentVolume, currentHue);
-  sliderColorPreview.style.background = color;
-
-  const low = volumeToHSL(0, currentHue);
-  const high = volumeToHSL(100, currentHue);
-  volumeSlider.style.background = `linear-gradient(90deg, ${low}, ${high})`;
+  volumeVisualBar.style.background = color;
 }
 
-volumeSlider.addEventListener("input", (e) => {
-  setVolume(parseInt(e.target.value, 10));
-});
-
-colorSchemeSelect.addEventListener("change", (e) => {
-  currentHue = parseInt(e.target.value, 10);
-  buildTiles();
-  updateSliderColor();
-});
-
-// ----------------------
-// TILE GRID
-// ----------------------
-
-const tileSteps = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90];
-
-function buildTiles() {
-  tileGrid.innerHTML = "";
-  tileSteps.forEach((step) => {
-    const tile = document.createElement("div");
-    tile.className = "tile";
-    tile.dataset.volume = step;
-
-    const inner = document.createElement("div");
-    inner.className = "tile-inner";
-    inner.textContent = step;
-
-    tile.style.background = volumeToHSL(step, currentHue);
-    tile.appendChild(inner);
-    tileGrid.appendChild(tile);
-
-    tile.addEventListener("click", () => setVolume(step));
-  });
-
-  updateTilesActiveState();
-}
-
-function updateTilesActiveState() {
-  const tiles = tileGrid.querySelectorAll(".tile");
-  tiles.forEach((tile) => {
-    const tileVol = parseInt(tile.dataset.volume, 10);
-    tile.classList.toggle("active", tileVol === Math.round(currentVolume / 10) * 10);
-  });
-}
+  
 
 // ----------------------
 // HEX GUESS GAME
@@ -204,80 +154,78 @@ hexForm.addEventListener("submit", (e) => {
 // REVERSE HEX GAME
 // ----------------------
 
-//const reverseHexCode = document.getElementById("reverse-hex-code");
-//const reverseHexOptions = document.getElementById("reverse-hex-options");
-//const reverseHexFeedback = document.getElementById("reverse-hex-feedback");
+const reverseHexCode = document.getElementById("reverse-hex-code");
+const reverseHexOptions = document.getElementById("reverse-hex-options");
+const reverseHexFeedback = document.getElementById("reverse-hex-feedback");
 
-//let reverseCorrectHex = "#000000";
-//let reverseCorrectVolume = 50;
+let reverseCorrectHex = "#000000";
+let reverseCorrectVolume = 50;
 
-//function generateReverseHexGame() {
-  //reverseHexOptions.innerHTML = "";
-  //reverseHexFeedback.textContent = "";
+function generateReverseHexGame() {
+  reverseHexOptions.innerHTML = "";
+  reverseHexFeedback.textContent = "";
 
   // Generate the correct color
-  //const hue = randomInt(0, 360);
-  //const sat = randomInt(50, 100);
- // const light = randomInt(35, 65);
+  const hue = randomInt(0, 360);
+  const sat = randomInt(50, 100);
+  const light = randomInt(35, 65);
 
-  //const rgb = hslToRgb(hue / 360, sat / 100, light / 100);
-  //reverseCorrectHex = rgbToHex(rgb[0], rgb[1], rgb[2]);
+  const rgb = hslToRgb(hue / 360, sat / 100, light / 100);
+  reverseCorrectHex = rgbToHex(rgb[0], rgb[1], rgb[2]);
 
   // Vibrancy → volume mapping
-  //const vibrancyScore =
-    //(sat / 100) * 0.7 +
-    //(1 - Math.abs(light - 50) / 50) * 0.3;
+  const vibrancyScore =
+    (sat / 100) * 0.7 +
+    (1 - Math.abs(light - 50) / 50) * 0.3;
 
- // reverseCorrectVolume = Math.round(vibrancyScore * 100);
+  reverseCorrectVolume = Math.round(vibrancyScore * 100);
 
- // reverseHexCode.textContent = reverseCorrectHex.toUpperCase();
+  reverseHexCode.textContent = reverseCorrectHex.toUpperCase();
 
   // Generate 3 incorrect colors
-  //const options = [reverseCorrectHex];
-  //while (options.length < 4) {
-  //  const h = randomInt(0, 360);
-   // const s = randomInt(20, 100);
-   // const l = randomInt(25, 75);
-    //const rgb2 = hslToRgb(h / 360, s / 100, l / 100);
-   // const hex = rgbToHex(rgb2[0], rgb2[1], rgb2[2]);
-   // if (!options.includes(hex)) options.push(hex);
-  //}
+  const options = [reverseCorrectHex];
+  while (options.length < 4) {
+    const h = randomInt(0, 360);
+    const s = randomInt(20, 100);
+    const l = randomInt(25, 75);
+    const rgb2 = hslToRgb(h / 360, s / 100, l / 100);
+    const hex = rgbToHex(rgb2[0], rgb2[1], rgb2[2]);
+    if (!options.includes(hex)) options.push(hex);
+  }
 
   // Shuffle
-  //options.sort(() => Math.random() - 0.5);
+  options.sort(() => Math.random() - 0.5);
 
   // Render swatches
-  //options.forEach((hex) => {
-   // const swatch = document.createElement("div");
-   // swatch.className = "reverse-hex-swatch";
-   // swatch.style.background = hex;
+  options.forEach((hex) => {
+    const swatch = document.createElement("div");
+    swatch.className = "reverse-hex-swatch";
+    swatch.style.background = hex;
 
-    //swatch.addEventListener("click", () => {
-      //if (hex === reverseCorrectHex) {
-       // setVolume(reverseCorrectVolume + 5);
-       // reverseHexFeedback.textContent =
-        //  "Correct! Bonus volume applied.";
-      //} else {
-       // setVolume(Math.round(currentVolume * 0.8));
-      //  reverseHexFeedback.textContent =
-      //    "Incorrect. Volume reduced.";
-     // }
+    swatch.addEventListener("click", () => {
+      if (hex === reverseCorrectHex) {
+        setVolume(reverseCorrectVolume + 5);
+        reverseHexFeedback.textContent =
+          "Correct! Bonus volume applied.";
+      } else {
+        setVolume(Math.round(currentVolume * 0.8));
+        reverseHexFeedback.textContent =
+          "Incorrect. Volume reduced.";
+      }
 
-     // generateReverseHexGame();
-    //});
+      generateReverseHexGame();
+    });
 
-   // reverseHexOptions.appendChild(swatch);
-  //});
-//}
+    reverseHexOptions.appendChild(swatch);
+  });
+}
 
 // Initialize reverse game
-//generateReverseHexGame();
+generateReverseHexGame();
 
 
 // ----------------------
 // INIT
 // ----------------------
 
-buildTiles();
-updateSliderColor();
 generateNewHexTarget();

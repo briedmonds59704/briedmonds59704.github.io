@@ -1,96 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" >
-    <title>Color Volume Control</title>
-    <link rel="stylesheet" href="colorVolume.css" >
+  <meta charset="UTF-8">
+  <title>Neon Color Volume Control</title>
+  <link rel="stylesheet" href="colorVolume.css">
 </head>
 <body>
-    <header>
-    <h1>Color Volume Control</h1>
-    <p>
-        Vibrancy = volume. All volume changes come from color‑guessing challenges.
-    </p>
-    </header>
 
-    <main>
-    <!-- VOLUME PANEL -->
-    <section class="panel">
-        <h2>Color‑Based Volume</h2>
+  <!-- TOP LEFT VOLUME BAR -->
+  <div id="top-bar">
+    <div class="volume-display">
+      <span>Volume:</span>
+      <span id="volume-value">50</span>
+    </div>
 
-        <div class="volume-display">
-            <span>Volume:</span>
-            <span id="volume-value">50</span>
-        </div>
+    <div class="volume-visual-wrapper">
+      <div id="volume-visual-bar"></div>
+    </div>
 
-        <!-- VISUAL VOLUME BAR -->
-        <div class="volume-visual-wrapper">
-            <div id="volume-visual-bar"></div>
-        </div>
+    <div class="scheme-wrapper">
+      <label for="color-scheme">Hue:</label>
+      <select id="color-scheme">
+        <option value="0">Red</option>
+        <option value="40">Orange</option>
+        <option value="120">Green</option>
+        <option value="200">Cyan</option>
+        <option value="260">Purple</option>
+        <option value="300">Magenta</option>
+      </select>
+    </div>
+  </div>
 
-        <div class="scheme-wrapper">
-            <label for="color-scheme">Color Scheme (hue):</label>
-            <select id="color-scheme">
-            <option value="0">Red</option>
-            <option value="40">Orange</option>
-            <option value="120">Green</option>
-            <option value="200">Cyan</option>
-            <option value="260">Purple</option>
-            <option value="300">Magenta</option>
-            </select>
-        </div>
+  <!-- MAIN SPLIT SCREEN -->
+  <main id="game-layout">
+
+    <!-- LEFT SIDE: HEX GUESS -->
+    <section class="panel game-panel">
+      <h2>HEX GUESS</h2>
+      <p class="subtitle">Match the hex code to the color</p>
+
+      <div class="hex-color-swatch-wrapper">
+        <div id="hex-color-swatch" class="hex-color-swatch"></div>
+        <div class="hex-target-label">Guess this color's hex</div>
+      </div>
+
+      <form id="hex-form">
+        <input type="text" id="hex-input" placeholder="#rrggbb" />
+        <button type="submit">Submit Guess</button>
+      </form>
+
+      <div class="hex-feedback" id="hex-feedback"></div>
     </section>
 
-    <!-- HEX GUESS GAME -->
-    <section class="panel">
-        <h2>Hex Guess Challenge</h2>
-        <p>
-            Guess the hex code of the color. Close guesses adjust your volume. Exact guesses give a ±5 bonus.
-        </p>
+    <!-- RIGHT SIDE: REVERSE HEX -->
+    <section class="panel game-panel">
+      <h2>REVERSE HEX</h2>
+      <p class="subtitle">Pick the correct color for the hex</p>
 
-        <div class="hex-game">
-            <div class="hex-color-swatch-wrapper">
-            <div id="hex-color-swatch" class="hex-color-swatch"></div>
-            <div class="hex-target-label">
-                Target color – guess its hex!
-            </div>
-        </div>
+      <div class="reverse-hex-target">
+        Hex Code: <span id="reverse-hex-code">#000000</span>
+      </div>
 
-            <form id="hex-form">
-                <label for="hex-input">
-                    Your guess (e.g. <code>#ff3366</code>):
-                </label>
-                <input type="text" id="hex-input" placeholder="#rrggbb">
-                <button type="submit">Submit Guess</button>
-            </form>
+      <div id="reverse-hex-options" class="reverse-hex-options"></div>
+      <div id="reverse-hex-feedback" class="hex-feedback"></div>
+    </section>
 
-            <div class="hex-feedback" id="hex-feedback"></div>
-        </div>
+  </main>
 
-        <hr>
+  <!-- SUBMIT BUTTON -->
+  <footer>
+    <div class="submit-volume-wrapper">
+      <button id="final-submit-button">Submit Volume</button>
+    </div>
+  </footer>
 
-        <!-- REVERSE HEX GAME -->
-        <h3>Reverse Hex Challenge</h3>
-        <p>Given a hex code, pick the correct color swatch.</p>
-
-            <div id="reverse-hex-wrapper">
-                <div class="reverse-hex-target">
-                    Hex Code:
-                    <span id="reverse-hex-code">#000000</span>
-                </div>
-
-                <div id="reverse-hex-options" class="reverse-hex-options"></div>
-
-                <div id="reverse-hex-feedback" class="hex-feedback"></div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>Color vibrancy as volume — interactive visual control.</p>
-    </footer>
-
-    <script src="colorVolume.js"></script>
+  <script src="colorVolume.js"></script>
 </body>
 </html>
+
+
 

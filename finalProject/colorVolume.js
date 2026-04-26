@@ -36,6 +36,14 @@ colorSchemeSelect.addEventListener("change", (e) => {
 });
 
 // ----------------------
+// FINAL SUBMIT BUTTON
+// ----------------------
+
+document.getElementById("final-submit-button").addEventListener("click", () => {
+  alert("Volume submitted: " + currentVolume);
+});
+
+// ----------------------
 // HEX GUESS GAME
 // ----------------------
 
@@ -219,4 +227,5 @@ function generateReverseHexGame() {
 updateVolumeVisual();
 generateNewHexTarget();
 generateReverseHexGame();
+
 

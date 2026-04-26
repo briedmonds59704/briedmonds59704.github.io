@@ -5,10 +5,9 @@
 let currentVolume = 50;
 let currentHue = 0;
 
-const volumeVisualBar = document.getElementById("volume-visual-bar");
 const volumeValue = document.getElementById("volume-value");
+const volumeVisualBar = document.getElementById("volume-visual-bar");
 const colorSchemeSelect = document.getElementById("color-scheme");
-
 
 // ----------------------
 // COLOR MAPPING
@@ -23,7 +22,6 @@ function volumeToHSL(volume, hue) {
 function setVolume(vol) {
   currentVolume = Math.max(0, Math.min(100, vol));
   volumeValue.textContent = currentVolume;
-
   updateVolumeVisual();
 }
 
@@ -32,7 +30,10 @@ function updateVolumeVisual() {
   volumeVisualBar.style.background = color;
 }
 
-  
+colorSchemeSelect.addEventListener("change", (e) => {
+  currentHue = parseInt(e.target.value, 10);
+  updateVolumeVisual();
+});
 
 // ----------------------
 // HEX GUESS GAME
@@ -55,7 +56,6 @@ function generateNewHexTarget() {
   const saturation = randomInt(50, 100);
   const lightness = randomInt(35, 65);
 
-  const hsl = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
   const rgb = hslToRgb(hue / 360, saturation / 100, lightness / 100);
   targetHex = rgbToHex(rgb[0], rgb[1], rgb[2]);
 
@@ -149,8 +149,7 @@ hexForm.addEventListener("submit", (e) => {
   generateNewHexTarget();
 });
 
-
- // ----------------------
+// ----------------------
 // REVERSE HEX GAME
 // ----------------------
 
@@ -165,7 +164,6 @@ function generateReverseHexGame() {
   reverseHexOptions.innerHTML = "";
   reverseHexFeedback.textContent = "";
 
-  // Generate the correct color
   const hue = randomInt(0, 360);
   const sat = randomInt(50, 100);
   const light = randomInt(35, 65);
@@ -173,7 +171,6 @@ function generateReverseHexGame() {
   const rgb = hslToRgb(hue / 360, sat / 100, light / 100);
   reverseCorrectHex = rgbToHex(rgb[0], rgb[1], rgb[2]);
 
-  // Vibrancy → volume mapping
   const vibrancyScore =
     (sat / 100) * 0.7 +
     (1 - Math.abs(light - 50) / 50) * 0.3;
@@ -182,7 +179,6 @@ function generateReverseHexGame() {
 
   reverseHexCode.textContent = reverseCorrectHex.toUpperCase();
 
-  // Generate 3 incorrect colors
   const options = [reverseCorrectHex];
   while (options.length < 4) {
     const h = randomInt(0, 360);
@@ -193,10 +189,8 @@ function generateReverseHexGame() {
     if (!options.includes(hex)) options.push(hex);
   }
 
-  // Shuffle
   options.sort(() => Math.random() - 0.5);
 
-  // Render swatches
   options.forEach((hex) => {
     const swatch = document.createElement("div");
     swatch.className = "reverse-hex-swatch";
@@ -205,12 +199,10 @@ function generateReverseHexGame() {
     swatch.addEventListener("click", () => {
       if (hex === reverseCorrectHex) {
         setVolume(reverseCorrectVolume + 5);
-        reverseHexFeedback.textContent =
-          "Correct! Bonus volume applied.";
+        reverseHexFeedback.textContent = "Correct! Bonus volume applied.";
       } else {
         setVolume(Math.round(currentVolume * 0.8));
-        reverseHexFeedback.textContent =
-          "Incorrect. Volume reduced.";
+        reverseHexFeedback.textContent = "Incorrect. Volume reduced.";
       }
 
       generateReverseHexGame();
@@ -220,12 +212,11 @@ function generateReverseHexGame() {
   });
 }
 
-// Initialize reverse game
-generateReverseHexGame();
-
-
 // ----------------------
 // INIT
 // ----------------------
 
+updateVolumeVisual();
 generateNewHexTarget();
+generateReverseHexGame();
+

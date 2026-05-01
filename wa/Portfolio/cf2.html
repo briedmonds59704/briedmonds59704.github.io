@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wonderland Linked List Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Hero Header -->
+    <header class="wonderland-hero">
+        <h1>🃏 Wonderland Linked List Gallery 🫖</h1>
+        <p>Where data structures meet delightful chaos</p>
+    </header>
+
+    <!-- Main Gallery Section -->
+    <section class="wonderland-gallery">
+        <h2 class="wonderland-title">Curious Images</h2>
+
+        <div class="wonderland-frame">
+            <img id="galleryImage" src="" alt="Gallery Image">
+        </div>
+
+        <div class="wonderland-controls">
+            <button onclick="prevImage()">⬅️ Drink Me</button>
+            <button onclick="nextImage()">Eat Me ➡️</button>
+        </div>
+    </section>
+
+    <!-- Explanation Section -->
+    <section class="wonderland-info">
+        <h2>How This Works</h2>
+        <p>
+            This gallery is powered by a <strong>doubly linked list</strong>.  
+            Each image is a node, pointing to the next and previous images.  
+            When you click “Eat Me” or “Drink Me,” you're literally traversing  
+            the list like Alice wandering through Wonderland.
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="wonderland-footer">
+        <p>Made with a little madness and TypeScript ✨</p>
+    </footer>
+
+    <script src="gallery.js"></script>
+</body>
+</html>
